@@ -17,6 +17,9 @@ defmodule DiscogsWeb.Router do
   scope "/", DiscogsWeb do
     pipe_through :browser
 
+    get "/artists", ArtistController, :index
+    get "/artists/:id", ArtistController, :show
+#    get "/", PageController, :index
     get "/", PageController, :index
   end
 
