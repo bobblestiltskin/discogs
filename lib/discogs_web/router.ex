@@ -19,7 +19,6 @@ defmodule DiscogsWeb.Router do
 
     get "/artists", ArtistController, :index
     get "/artists/:id", ArtistController, :show
-#    get "/", PageController, :index
     get "/", PageController, :index
   end
 

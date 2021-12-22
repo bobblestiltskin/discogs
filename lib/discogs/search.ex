@@ -19,16 +19,6 @@ defmodule Discogs.Search do
   end
  	
   def list_artists do
-    Discogs.Repo.all(Artist)
+    Repo.all(Artist)
   end
-
-#  def change_artist(%Artist{} = artist) do
-#    Artist.changeset(artist, %{})
-#  end
-#
-#  def create_artist(attrs \\ %{}) do
-#    %Artist{}
-#    |> Artist.changeset(attrs)
-#    |> Repo.insert()
-#  end
 end
