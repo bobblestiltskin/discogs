@@ -1,0 +1,2 @@
+<h1>Showing Artist</h1>
+<%= render "artist.html", artist: @artist %>

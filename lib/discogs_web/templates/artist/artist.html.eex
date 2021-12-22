@@ -1,0 +1,1 @@
+<strong><%= @artist.artist %></strong> (<%= @artist.id %>)
