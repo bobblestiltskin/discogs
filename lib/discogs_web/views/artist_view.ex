@@ -1,7 +1,7 @@
 defmodule DiscogsWeb.ArtistView do
   use DiscogsWeb, :view
 
-  alias Discogs.Search
+#  alias Discogs.Search
 
 #  def name(%Search.Artist{artist: artist}) do
 #    artist

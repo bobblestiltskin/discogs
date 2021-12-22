@@ -2,7 +2,7 @@ defmodule DiscogsWeb.ArtistController do
   use DiscogsWeb, :controller
 
   alias Discogs.Search
-  alias Discogs.Search.Artist
+#  alias Discogs.Search.Artist
 
   def index(conn, _params) do
     artists = Search.list_artists()
@@ -13,5 +13,4 @@ defmodule DiscogsWeb.ArtistController do
     artist = Search.get_artist(id)
     render(conn, "show.html", artist: artist)
   end
-
 end

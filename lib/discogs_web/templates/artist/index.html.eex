@@ -3,7 +3,6 @@
 <table>
   <%= for artist <- @artists do %>
     <tr>
-<!--      <td><b><%= artist.artist %></b> (<%= artist.id %>)</td> -->
       <td><%= render "artist.html", artist: artist %></td>
       <td><%= link "View", to: Routes.artist_path(@conn, :show, artist.id) %></td>
     </tr>
