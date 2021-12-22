@@ -1,0 +1,10 @@
+<h1>Listing Labels</h1>
+
+<table>
+  <%= for label <- @labels do %>
+    <tr>
+      <td><%= render "label.html", label: label %></td>
+      <td><%= link "View", to: Routes.label_path(@conn, :show, label.id) %></td>
+    </tr>
+  <% end %>
+</table>

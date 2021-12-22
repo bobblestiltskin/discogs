@@ -1,0 +1,2 @@
+<h1>Showing Label</h1>
+<%= render "label.html", label: @label %>
