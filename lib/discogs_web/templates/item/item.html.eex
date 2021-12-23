@@ -1,0 +1,1 @@
+<strong><%= @item.title %></strong> <em>catalogue</em> <strong><%= @item.catalogue_number %></strong> (<%= @item.id %>)

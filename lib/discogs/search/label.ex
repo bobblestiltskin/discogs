@@ -3,6 +3,6 @@ defmodule Discogs.Search.Label do
 
   schema "labels" do
     field :label, :string
-#    has_many :items, Discogs.Item
+    has_many :items, Discogs.Search.Item
   end
 end

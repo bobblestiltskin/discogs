@@ -1,0 +1,10 @@
+<h1>Listing Items</h1>
+
+<table>
+  <%= for item <- @items do %>
+    <tr>
+      <td><%= render "item.html", item: item %></td>
+      <td><%= link "View", to: Routes.item_path(@conn, :show, item.id) %></td>
+    </tr>
+  <% end %>
+</table>

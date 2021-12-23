@@ -3,6 +3,6 @@ defmodule Discogs.Search.Format do
 
   schema "formats" do
     field :format, :string
-#    has_many :items, Discogs.Item
+    has_many :items, Discogs.Search.Item
   end
 end
