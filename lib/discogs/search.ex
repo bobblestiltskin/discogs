@@ -13,6 +13,12 @@ defmodule Discogs.Search do
     Repo.get(Artist, id)
   end
  	
+#  def get_artist_name(id) do
+#    Repo.get(Artist, id).artist
+##    x = Repo.get(Artist, id)
+##    x.artist
+#  end
+
   def get_artist!(id) do
     Repo.get!(Artist, id)
   end
