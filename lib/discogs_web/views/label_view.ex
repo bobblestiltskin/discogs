@@ -7,9 +7,9 @@ defmodule DiscogsWeb.LabelView do
 #    label
 #  end
 
-#  def first_name(%Search.Label{label: label}) do
-#    label
-#    |> String.split(" ")
-#    |> Enum.at(0)
-#  end
+  def discogs_link(label_name) do
+    x = label_name |> String.replace(" ", "+")
+    "https://www.discogs.com/search/?type=label&title=#{x}"
+  end
+
 end
