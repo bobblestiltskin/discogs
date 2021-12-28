@@ -4,6 +4,7 @@ defmodule Discogs.Search do
   """
 
   alias Discogs.Repo
+  import Ecto.Query, only: [from: 2]
   alias Discogs.Search.Artist 
   alias Discogs.Search.Format 
   alias Discogs.Search.Item 
@@ -13,11 +14,11 @@ defmodule Discogs.Search do
     Repo.get(Artist, id)
   end
  	
-#  def get_artist_name(id) do
-#    Repo.get(Artist, id).artist
-##    x = Repo.get(Artist, id)
-##    x.artist
-#  end
+  def get_artist_name(id) do
+    Repo.get(Artist, id).artist
+#    x = Repo.get(Artist, id)
+#    x.artist
+  end
 
   def get_artist!(id) do
     Repo.get!(Artist, id)
@@ -77,5 +78,44 @@ defmodule Discogs.Search do
 
   def list_labels do
     Repo.all(Label)
+  end
+
+#  def get_items_by_artist(artist_choice) do
+#    Item |> Ecto.Query.where(artist_id: ^artist_choice) |> Repo.all
+#  end
+
+  def filter_by_artist(query, artist_choice) do
+    if String.length(artist_choice) > 0 do
+      artist_id = String.to_integer(artist_choice)
+      query |> Ecto.Query.where(artist_id: ^artist_id)
+    else
+      query
+    end
+  end
+
+  def filter_by_label(query, label_choice) do
+    if String.length(label_choice) > 0 do
+      label_id = String.to_integer(label_choice)
+      query |> Ecto.Query.where(label_id: ^label_id)
+    else
+      query
+    end
+  end
+
+  def filter_by_format(query, format_choice) do
+    if String.length(format_choice) > 0 do
+      format_id = String.to_integer(format_choice)
+      query |> Ecto.Query.where(format_id: ^format_id)
+    else
+      query
+    end
+  end
+
+  def filter_items(artist_choice, label_choice, format_choice) do
+    Item
+      |> filter_by_artist(artist_choice)
+      |> filter_by_label(label_choice)
+      |> filter_by_format(format_choice)
+      |> Repo.all
   end
 end

@@ -1,7 +1,4 @@
 <h1>Find Page</h1>
-<h2><%=  hello(3) %></h2>
-<p>Hello, this is the find page!</p>
-
 <form action="/results">
 <table border="1">
 <tr>

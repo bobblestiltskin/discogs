@@ -23,6 +23,7 @@ defmodule DiscogsWeb.Router do
     resources "/items", ItemController, only: [:index, :show]
     resources "/labels", LabelController, only: [:index, :show]
     resources "/find", FindController, only: [:index, :show]
+    resources "/results", ResultsController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
