@@ -1,0 +1,1 @@
+<option value="<%= @artist.id %>"><%= @artist.artist %></option>

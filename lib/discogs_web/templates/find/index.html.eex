@@ -1,0 +1,45 @@
+<h1>Find Page</h1>
+<h2><%=  hello(3) %></h2>
+<p>Hello, this is the find page!</p>
+
+<form action="/results">
+<table border="1">
+<tr>
+  <th><label for="id_artist_choice">Artist choice:</label></th>
+  <td>
+    <select name="artist_choice" id="id_artist_choice">
+      <option value="" selected>---------</option>
+      <%= for artist <- @artists do %>
+        <%= render "option_a.html", artist: artist %>
+      <% end %>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <th><label for="id_label_choice">Label choice:</label></th>
+  <td>
+    <select name="label_choice" id="id_label_choice">
+      <option value="" selected>---------</option>
+      <%= for label <- @labels do %>
+        <%= render "option_l.html", label: label %>
+      <% end %>
+    </select>
+  </td>
+</tr>
+
+<tr>
+  <th><label for="id_format_choice">Format choice:</label></th>
+  <td>
+    <select name="format_choice" id="id_format_choice">
+      <option value="" selected>---------</option>
+      <%= for format <- @formats do %>
+        <%= render "option_f.html", format: format %>
+      <% end %>
+    </select>
+  </td>
+</tr>
+
+<%= submit "Submit" %>
+
+</form>

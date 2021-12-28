@@ -1,0 +1,1 @@
+<option value="<%= @format.id %>"><%= @format.format %></option>
