@@ -84,31 +84,58 @@ defmodule Discogs.Search do
 #    Item |> Ecto.Query.where(artist_id: ^artist_choice) |> Repo.all
 #  end
 
+#  def filter_by_artist(query, artist_choice) do
+#    if String.length(artist_choice) > 0 do
+#      artist_id = String.to_integer(artist_choice)
+#      query |> Ecto.Query.where(artist_id: ^artist_id)
+#    else
+#      query
+#    end
+#  end
+
+  def filter_by_artist(query, artist_choice) when is_bitstring(artist_choice) and byte_size(artist_choice) > 0 do
+    artist_id = String.to_integer(artist_choice)
+    query |> Ecto.Query.where(artist_id: ^artist_id)
+  end
+
   def filter_by_artist(query, artist_choice) do
-    if String.length(artist_choice) > 0 do
-      artist_id = String.to_integer(artist_choice)
-      query |> Ecto.Query.where(artist_id: ^artist_id)
-    else
-      query
-    end
+    query
+  end
+
+#  def filter_by_label(query, label_choice) do
+#    if String.length(label_choice) > 0 do
+#      label_id = String.to_integer(label_choice)
+#      query |> Ecto.Query.where(label_id: ^label_id)
+#    else
+#      query
+#    end
+#  end
+
+  def filter_by_label(query, label_choice) when is_bitstring(label_choice) and byte_size(label_choice) > 0 do
+    label_id = String.to_integer(label_choice)
+    query |> Ecto.Query.where(label_id: ^label_id)
   end
 
   def filter_by_label(query, label_choice) do
-    if String.length(label_choice) > 0 do
-      label_id = String.to_integer(label_choice)
-      query |> Ecto.Query.where(label_id: ^label_id)
-    else
-      query
-    end
+    query
+  end
+
+#  def filter_by_format(query, format_choice) do
+#    if String.length(format_choice) > 0 do
+#      format_id = String.to_integer(format_choice)
+#      query |> Ecto.Query.where(format_id: ^format_id)
+#    else
+#      query
+#    end
+#  end
+
+  def filter_by_format(query, format_choice) when is_bitstring(format_choice) and byte_size(format_choice) > 0 do
+    format_id = String.to_integer(format_choice)
+    query |> Ecto.Query.where(format_id: ^format_id)
   end
 
   def filter_by_format(query, format_choice) do
-    if String.length(format_choice) > 0 do
-      format_id = String.to_integer(format_choice)
-      query |> Ecto.Query.where(format_id: ^format_id)
-    else
-      query
-    end
+    query
   end
 
   def filter_items(artist_choice, label_choice, format_choice) do
