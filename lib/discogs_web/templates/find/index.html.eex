@@ -1,6 +1,7 @@
 <h1>Find Page</h1>
 <form action="/results">
 <table border="1">
+
 <tr>
   <th><label for="id_artist_choice">Artist choice:</label></th>
   <td>
@@ -26,6 +27,37 @@
 </tr>
 
 <tr>
+<table>
+<tr>
+<td>
+<input type="radio" id="7" name="format_button" value="7">
+<label for="7">7"</label><br>
+</td>
+<td>
+<input type="radio" id="10" name="format_button" value="10">
+<label for="10">10"</label><br>
+</td>
+<td>
+<input type="radio" id="12" name="format_button" value="12">
+<label for="12">12"</label><br>
+</td>
+<td>
+<input type="radio" id="LP" name="format_button" value="LP">
+<label for="LP">LP</label><br>
+</td>
+<td>
+<input type="radio" id="CD" name="format_button" value="CD">
+<label for="CD">CD</label><br>
+</td>
+<td>
+<input type="radio" id="Cassette" name="format_button" value="Cass">
+<label for="Cassette">Cassette</label><br>
+</td>
+<tr>
+</table>
+</tr>
+
+<tr>
   <th><label for="id_format_choice">Format choice:</label></th>
   <td>
     <select name="format_choice" id="id_format_choice">
@@ -37,6 +69,11 @@
   </td>
 </tr>
 
-<%= submit "Submit" %>
+<tr>
+  <td>
+     <%= submit "Submit" %>
+  </td>
+</tr>
 
+</table>
 </form>

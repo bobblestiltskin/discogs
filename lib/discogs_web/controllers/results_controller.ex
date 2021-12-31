@@ -7,9 +7,9 @@ defmodule DiscogsWeb.ResultsController do
 #  def artist_filter(items, artist_id) do
 #  end
 
-  def index(conn, _params) do
+  def index(conn, params) do
 #    items = Search.get_items_by_artist(String.to_integer(_params["artist_choice"]))
-    items = Search.filter_items(_params["artist_choice"], _params["label_choice"], _params["format_choice"])
+    items = Search.filter_items(params["artist_choice"], params["label_choice"], params["format_choice"], params["format_button"])
     render(conn, "index.html", items: items)
   end
 
