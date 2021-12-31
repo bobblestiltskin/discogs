@@ -4,7 +4,8 @@ defmodule Discogs.Search do
   """
 
   alias Discogs.Repo
-  import Ecto.Query, only: [from: 2]
+#  import Ecto.Query, only: [from: 2]
+  import Ecto.Query
   alias Discogs.Search.Artist 
   alias Discogs.Search.Format 
   alias Discogs.Search.Item 
@@ -16,8 +17,6 @@ defmodule Discogs.Search do
  	
   def get_artist_name(id) do
     Repo.get(Artist, id).artist
-#    x = Repo.get(Artist, id)
-#    x.artist
   end
 
   def get_artist!(id) do
@@ -86,7 +85,7 @@ defmodule Discogs.Search do
 
   def filter_by_artist(query, artist_choice) when is_bitstring(artist_choice) and byte_size(artist_choice) > 0 do
     artist_id = String.to_integer(artist_choice)
-    query |> Ecto.Query.where(artist_id: ^artist_id)
+    query |> where(artist_id: ^artist_id)
   end
 
   def filter_by_artist(query, _artist_choice) do
@@ -95,21 +94,21 @@ defmodule Discogs.Search do
 
   def filter_by_label(query, label_choice) when is_bitstring(label_choice) and byte_size(label_choice) > 0 do
     label_id = String.to_integer(label_choice)
-    query |> Ecto.Query.where(label_id: ^label_id)
+    query |> where(label_id: ^label_id)
   end
 
   def filter_by_label(query, _label_choice) do
     query
   end
 
-  def format_like(_query, format_button) do
-    like = "%#{format_button}%"
-    Repo.all(from f in Format, where: like(f.format, ^like))
-  end
+#  def format_like(_query, format_button) do
+#    like = "%#{format_button}%"
+#    Repo.all(from f in Format, where: like(f.format, ^like))
+#  end
 
   def filter_by_format(query, format_choice, _format_button) when is_bitstring(format_choice) and byte_size(format_choice) > 0 do
     format_id = String.to_integer(format_choice)
-    query |> Ecto.Query.where(format_id: ^format_id)
+    query |> where(format_id: ^format_id)
   end
 
   def filter_by_format(query, _format_choice, format_button) when is_bitstring(format_button) and byte_size(format_button) > 0 do
@@ -118,7 +117,7 @@ defmodule Discogs.Search do
                where: like(f.format, ^mike),
                select: f.id)
     sqr = Repo.all(subquery)
-    query |> Ecto.Query.where([i], i.format_id in ^sqr)
+    query |> where([i], i.format_id in ^sqr)
   end
 
   def filter_by_format(query, _format_choice, _format_button) do
@@ -132,14 +131,5 @@ defmodule Discogs.Search do
       |> filter_by_format(format_choice, format_button)
       |> Repo.all
   end
-
-#select id from formats where format like '%10"%';
-##select id from formats where format like '12"%' or format like '?x12"%';
-#select id from formats where format like '%12"%';
-##select id from formats where format like '7"%' or format like '?x7"%' or format like 'Flexi, 7"%';
-#select id from formats where format like '%7"%';
-#select id from formats where format like '%LP%';
-#select id from formats where format like '%CD%';
-#select id from formats where format like 'Cass%';
 
 end
