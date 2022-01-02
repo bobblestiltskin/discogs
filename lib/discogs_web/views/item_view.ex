@@ -3,15 +3,8 @@ defmodule DiscogsWeb.ItemView do
 
   alias Discogs.Search
 
-#  def name(%Search.Item{item: item}) do
-#    item
-#  end
-
-#  def artist(%Search.Item{item: item}) do
   def artist_name(artist_id) do
     Search.get_artist(artist_id).artist
-#    artist_id
-#    |> Search.get_artist_name()
   end
 
   def format_name(format_id) do
@@ -20,5 +13,17 @@ defmodule DiscogsWeb.ItemView do
 
   def label_name(label_id) do
     Search.get_label(label_id).label
+  end
+
+  def discogs_link(item_name) do
+    x = item_name |> String.replace(" ", "+")
+    "https://www.discogs.com/search/?title=#{x}"
+  end
+
+  def discogs_link(item_name, artist_name, label_name) do
+    x = item_name |> String.replace(" ", "+")
+    y = artist_name |> String.replace(" ", "+")
+    z = label_name |> String.replace(" ", "+")
+    "https://www.discogs.com/search/?type=all&title=#{x}&artist=#{y}&label=#{z}"
   end
 end

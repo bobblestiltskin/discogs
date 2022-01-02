@@ -1,1 +1,1 @@
-<strong><%= @label.label %></strong> (<a href="<%= discogs_link(@label.label) %>">Discogs Search</a> )
+<td><strong><%= @label.label %></strong></td><td><a href="<%= discogs_link(@label.label) %>">Search</a></td>

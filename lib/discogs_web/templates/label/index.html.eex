@@ -1,10 +1,11 @@
-<h1>Listing Labels</h1>
+<!-- <h1>Listing Labels</h1> -->
 
 <table>
+  <tr><th>Label</th><th>Search</th></tr>
   <%= for label <- @labels do %>
     <tr>
-      <td><%= render "label.html", label: label %></td>
-      <td><%= link "View", to: Routes.label_path(@conn, :show, label.id) %></td>
+      <%= render "label.html", label: label %>
+<!--      <td><%= link "View", to: Routes.label_path(@conn, :show, label.id) %></td> -->
     </tr>
   <% end %>
 </table>

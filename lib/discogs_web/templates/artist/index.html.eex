@@ -1,10 +1,12 @@
-<h1>Listing Artists</h1>
+<!-- <h1>Listing Artists</h1> -->
 
 <table>
+  <tr><th>Artist</th><th>Discogs</th>
+    </tr>
   <%= for artist <- @artists do %>
     <tr>
-      <td><%= render "artist.html", artist: artist %></td>
-      <td><%= link "View", to: Routes.artist_path(@conn, :show, artist.id) %></td>
+      <%= render "artist.html", artist: artist %>
+<!--      <td><%= link "View", to: Routes.artist_path(@conn, :show, artist.id) %></td> -->
     </tr>
   <% end %>
 </table>

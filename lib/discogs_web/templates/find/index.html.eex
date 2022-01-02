@@ -27,7 +27,9 @@
 </tr>
 
 <tr>
-<table>
+<th><label for="id_format_buttons">Format:</label></th>
+<td>
+<table border="0">
 <tr>
 <td>
 <input type="radio" id="7" name="format_button" value="7">
@@ -53,8 +55,13 @@
 <input type="radio" id="Cassette" name="format_button" value="Cass">
 <label for="Cassette">Cassette</label><br>
 </td>
-<tr>
+<td>
+<input type="radio" id="Cancel" name="format_button" value="">
+<label for="Cancel">Cancel</label><br>
+</td>
+</tr>
 </table>
+</td>
 </tr>
 
 <tr>
@@ -70,8 +77,10 @@
 </tr>
 
 <tr>
-  <td>
+  <td colspan="2">
+     <center>
      <%= submit "Submit" %>
+     </center>
   </td>
 </tr>
 

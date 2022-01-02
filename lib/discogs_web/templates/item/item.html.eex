@@ -1,7 +1,6 @@
-<!-- <strong><%= @item.title %></strong> <em>catalogue</em> <strong><%= @item.catalogue_number %></strong> <em>artist</em> <%= @item.artist_id %> -->
-      <td><%= label_name(@item.label_id) %></td>
-      <td><%= @item.title %></td>
-      <td><%= @item.catalogue_number %></td>
-      <td><%= artist_name(@item.artist_id) %></td>
-      <td><%= format_name(@item.format_id) %></td>
-
+<td><%= label_name(@item.label_id) %></td>
+<td><%= @item.title %></td>
+<td><%= @item.catalogue_number %></td>
+<td><%= artist_name(@item.artist_id) %></td>
+<td><%= format_name(@item.format_id) %></td>
+<td><a href="<%= discogs_link(@item.title, artist_name(@item.artist_id), label_name(@item.label_id)) %>">Search</a></td>

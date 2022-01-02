@@ -1,1 +1,1 @@
-<strong><%= @artist.artist %></strong> (<a href="<%= discogs_link(@artist.artist) %>">Discogs Search</a> )
+<td><strong><%= @artist.artist %></strong></td><td><a href="<%= discogs_link(@artist.artist) %>">Search</a></td>
