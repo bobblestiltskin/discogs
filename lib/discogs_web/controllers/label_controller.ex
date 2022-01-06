@@ -2,7 +2,6 @@ defmodule DiscogsWeb.LabelController do
   use DiscogsWeb, :controller
 
   alias Discogs.Search
-#  alias Discogs.Search.Label
 
   def index(conn, _params) do
     labels = Search.list_labels()

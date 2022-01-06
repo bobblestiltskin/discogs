@@ -21,9 +21,9 @@ defmodule DiscogsWeb.ItemView do
   end
 
   def discogs_link(item_name, artist_name, label_name) do
-    x = item_name |> String.replace(" ", "+")
+    x = item_name   |> String.replace(" ", "+")
     y = artist_name |> String.replace(" ", "+")
-    z = label_name |> String.replace(" ", "+")
+    z = label_name  |> String.replace(" ", "+")
     "https://www.discogs.com/search/?type=all&title=#{x}&artist=#{y}&label=#{z}"
   end
 end

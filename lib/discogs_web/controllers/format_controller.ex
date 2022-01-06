@@ -2,7 +2,6 @@ defmodule DiscogsWeb.FormatController do
   use DiscogsWeb, :controller
 
   alias Discogs.Search
-#  alias Discogs.Search.Format
 
   def index(conn, _params) do
     formats = Search.list_formats()

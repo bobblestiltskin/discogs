@@ -1,11 +1,8 @@
-<!-- <h1>Listing Labels</h1> -->
-
 <table>
   <tr><th>Label</th><th>Search</th></tr>
   <%= for label <- @labels do %>
     <tr>
       <%= render "label.html", label: label %>
-<!--      <td><%= link "View", to: Routes.label_path(@conn, :show, label.id) %></td> -->
     </tr>
   <% end %>
 </table>

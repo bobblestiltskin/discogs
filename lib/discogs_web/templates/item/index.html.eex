@@ -1,11 +1,8 @@
-<!-- <h1>All Items</h1> -->
-
 <table>
   <tr><th>Label</th><th>Title</th><th>Catalogue Number</th><th>Artist</th><th>Format</th><th>Link</th></tr>
   <%= for item <- @items do %>
     <tr>
       <%= render "item.html", item: item %>
-<!--      <td><%= link "View", to: Routes.item_path(@conn, :show, item.id) %></td> -->
     </tr>
   <% end %>
 </table>

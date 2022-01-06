@@ -2,7 +2,6 @@ defmodule DiscogsWeb.ArtistController do
   use DiscogsWeb, :controller
 
   alias Discogs.Search
-#  alias Discogs.Search.Artist
 
   def index(conn, _params) do
     artists = Search.list_artists()

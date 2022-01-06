@@ -4,7 +4,6 @@ defmodule Discogs.Search do
   """
 
   alias Discogs.Repo
-#  import Ecto.Query, only: [from: 2]
   import Ecto.Query
   alias Discogs.Search.Artist 
   alias Discogs.Search.Format 
@@ -79,10 +78,6 @@ defmodule Discogs.Search do
     Repo.all(Label)
   end
 
-#  def get_items_by_artist(artist_choice) do
-#    Item |> Ecto.Query.where(artist_id: ^artist_choice) |> Repo.all
-#  end
-
   def filter_by_artist(query, artist_choice) when is_bitstring(artist_choice) and byte_size(artist_choice) > 0 do
     artist_id = String.to_integer(artist_choice)
     query |> where(artist_id: ^artist_id)
@@ -100,11 +95,6 @@ defmodule Discogs.Search do
   def filter_by_label(query, _label_choice) do
     query
   end
-
-#  def format_like(_query, format_button) do
-#    like = "%#{format_button}%"
-#    Repo.all(from f in Format, where: like(f.format, ^like))
-#  end
 
   def filter_by_format(query, format_choice, _format_button) when is_bitstring(format_choice) and byte_size(format_choice) > 0 do
     format_id = String.to_integer(format_choice)
