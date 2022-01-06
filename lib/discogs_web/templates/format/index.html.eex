@@ -4,7 +4,6 @@
   <%= for format <- @formats do %>
     <tr>
       <td><%= render "format.html", format: format %></td>
-      <td><%= link "View", to: Routes.format_path(@conn, :show, format.id) %></td>
     </tr>
   <% end %>
 </table>

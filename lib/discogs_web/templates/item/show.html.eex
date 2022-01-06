@@ -1,5 +1,0 @@
-<h1>Showing Item</h1>
-<table>
-  <tr><th>Label</th><th>Title</th><th>Catalogue Number</th><th>Artist</th><th>Format</th></tr>
-  <tr><%= render "item.html", item: @item %></tr>
-</table>

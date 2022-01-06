@@ -19,8 +19,8 @@ defmodule DiscogsWeb.Router do
 
     get "/", PageController, :index
     resources "/artists", ArtistController, only: [:index, :show]
-    resources "/formats", FormatController, only: [:index, :show]
-    resources "/items", ItemController, only: [:index, :show]
+    resources "/formats", FormatController, only: [:index]
+    resources "/items", ItemController, only: [:index]
     resources "/labels", LabelController, only: [:index, :show]
     resources "/find", FindController, only: [:index, :show]
     resources "/results", ResultsController, only: [:index, :show]

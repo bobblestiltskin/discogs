@@ -1,5 +1,5 @@
 <table>
-  <tr><th>Label</th><th>Search</th></tr>
+  <tr><th>Label</th><th>Discogs</th></tr>
   <%= for label <- @labels do %>
     <tr>
       <%= render "label.html", label: label %>
