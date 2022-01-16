@@ -3,7 +3,7 @@
 <table border="1">
 
 <tr>
-  <th><label for="id_artist_choice">Artist choice:</label></th>
+  <th><center><label for="id_artist_choice">Artist</label></center></th>
   <td>
     <select name="artist_choice" id="id_artist_choice">
       <option value="" selected>---------</option>
@@ -15,7 +15,7 @@
 </tr>
 
 <tr>
-  <th><label for="id_label_choice">Label choice:</label></th>
+  <th><center><label for="id_label_choice">Label</label></center></th>
   <td>
     <select name="label_choice" id="id_label_choice">
       <option value="" selected>---------</option>
@@ -27,7 +27,7 @@
 </tr>
 
 <tr>
-<th><label for="id_format_buttons">Format:</label></th>
+<th><center><label for="id_format_buttons">Format</label></center></th>
 <td>
 <table border="0">
 <tr>
@@ -56,8 +56,8 @@
 <label for="Cassette">Cassette</label><br>
 </td>
 <td>
-<input type="radio" id="Cancel" name="format_button" value="">
-<label for="Cancel">Cancel</label><br>
+<input type="radio" id="All" name="format_button" value="" selected>
+<label for="All">All</label><br>
 </td>
 </tr>
 </table>
@@ -65,7 +65,7 @@
 </tr>
 
 <tr>
-  <th><label for="id_format_choice">Format choice:</label></th>
+  <th><center><label for="id_format_choice">Exact Format</label></center></th>
   <td>
     <select name="format_choice" id="id_format_choice">
       <option value="" selected>---------</option>
@@ -74,6 +74,28 @@
       <% end %>
     </select>
   </td>
+</tr>
+
+<tr>
+<th><center><label for="id_order_buttons">Order By</label></center></th>
+<td>
+<table border="0">
+<tr>
+<td>
+<input type="radio" id="artist" name="order_button" value="artist_id">
+<label for="artist">Artist</label><br>
+</td>
+<td>
+<input type="radio" id="artist" name="order_button" value="title">
+<label for="title">Title</label><br>
+</td>
+<td>
+<input type="radio" id="label" name="order_button" value="" selected>
+<label for="label">Label</label><br>
+</td>
+</tr>
+</table>
+</td>
 </tr>
 
 <tr>

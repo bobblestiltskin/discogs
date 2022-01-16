@@ -4,7 +4,7 @@ defmodule DiscogsWeb.ResultsController do
   alias Discogs.Search
 
   def index(conn, params) do
-    items = Search.filter_items(params["artist_choice"], params["label_choice"], params["format_choice"], params["format_button"])
+    items = Search.filter_items(params["artist_choice"], params["label_choice"], params["format_choice"], params["format_button"], params["order_button"])
     render(conn, "index.html", items: items)
   end
 
