@@ -114,11 +114,24 @@ defmodule Discogs.Search do
     query
   end
 
-  def filter_items(artist_choice, label_choice, format_choice, format_button) do
+  def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0  and order_button == "artist_id" do
+    query |> order_by([i], asc: i.artist_id)
+  end
+
+  def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0 do
+    query |> order_by([i], asc: i.title)
+  end
+
+  def order_by_x(query, _order_button) do
+    query
+  end
+
+  def filter_items(artist_choice, label_choice, format_choice, format_button, order_button) do
     Item
       |> filter_by_artist(artist_choice)
       |> filter_by_label(label_choice)
       |> filter_by_format(format_choice, format_button)
+      |> order_by_x(order_button)
       |> Repo.all
   end
 
