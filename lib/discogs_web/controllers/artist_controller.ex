@@ -4,7 +4,7 @@ defmodule DiscogsWeb.ArtistController do
   alias Discogs.Search
 
   def index(conn, _params) do
-    artists = Search.list_artists()
+    artists = Search.list_artists_sorted()
     render(conn, "index.html", artists: artists)
   end
 

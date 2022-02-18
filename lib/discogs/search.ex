@@ -30,6 +30,11 @@ defmodule Discogs.Search do
     Repo.all(Artist)
   end
 
+  def list_artists_sorted do
+    query = from a in Artist, order_by: a.artist
+    Repo.all(query)
+  end
+
   def get_format(id) do
     Repo.get(Format, id)
   end
@@ -44,6 +49,11 @@ defmodule Discogs.Search do
 
   def list_formats do
     Repo.all(Format)
+  end
+
+  def list_formats_sorted do
+    query = from f in Format, order_by: f.format
+    Repo.all(query)
   end
 
   def get_item(id) do
@@ -76,6 +86,11 @@ defmodule Discogs.Search do
 
   def list_labels do
     Repo.all(Label)
+  end
+
+  def list_labels_sorted do
+    query = from l in Label, order_by: l.label
+    Repo.all(query)
   end
 
   def filter_by_artist(query, artist_choice) when is_bitstring(artist_choice) and byte_size(artist_choice) > 0 do
