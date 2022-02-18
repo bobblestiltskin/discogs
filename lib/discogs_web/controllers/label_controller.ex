@@ -4,7 +4,7 @@ defmodule DiscogsWeb.LabelController do
   alias Discogs.Search
 
   def index(conn, _params) do
-    labels = Search.list_labels()
+    labels = Search.list_labels_sorted()
     render(conn, "index.html", labels: labels)
   end
 
