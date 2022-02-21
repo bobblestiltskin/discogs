@@ -130,15 +130,27 @@ defmodule Discogs.Search do
   end
 
   def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0  and order_button == "artist_id" do
-    query |> order_by([i], asc: i.artist_id)
+    query
+      |> join(:left, [i], a in Artist, on: i.artist_id == a.id)
+      |> order_by([i,a], asc: a.artist)
   end
 
-  def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0 do
-    query |> order_by([i], asc: i.title)
+  def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0 and order_button == "title" do
+    query
+      |> order_by([i], asc: i.title)
+  end
+
+  def order_by_x(query, order_button) when is_bitstring(order_button) and byte_size(order_button) > 0 and order_button == "label_id" do
+    query
+      |> join(:left, [i], l in Label, on: i.label_id == l.id)
+      |> order_by([i,l], asc: l.label)
   end
 
   def order_by_x(query, _order_button) do
     query
+      |> join(:left, [i], a in Artist, on: i.artist_id == a.id)
+      |> join(:left, [i], l in Label, on: i.label_id == l.id)
+      |> order_by([i,a,l], [a.artist, l.label]) # order by artist, label if no ordering selected
   end
 
   def filter_items(artist_choice, label_choice, format_choice, format_button, order_button) do

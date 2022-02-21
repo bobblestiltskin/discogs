@@ -82,7 +82,7 @@
 <table border="0">
 <tr>
 <td>
-<input type="radio" id="artist" name="order_button" value="artist_id">
+<input type="radio" id="artist" name="order_button" value="artist_id" selected>
 <label for="artist">Artist</label><br>
 </td>
 <td>
@@ -90,7 +90,7 @@
 <label for="title">Title</label><br>
 </td>
 <td>
-<input type="radio" id="label" name="order_button" value="" selected>
+<input type="radio" id="label" name="order_button" value="label_id">
 <label for="label">Label</label><br>
 </td>
 </tr>
