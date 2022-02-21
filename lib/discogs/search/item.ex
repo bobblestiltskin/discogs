@@ -1,5 +1,6 @@
 defmodule Discogs.Search.Item do
   use Ecto.Schema
+  import Ecto.Changeset
 
   schema "items" do
     field :catalogue_number, :string
@@ -9,5 +10,19 @@ defmodule Discogs.Search.Item do
     belongs_to :artist, Discogs.Search.Artist
     belongs_to :label, Discogs.Search.Label
     belongs_to :format, Discogs.Search.Format
+
+    timestamps()
+  end
+
+  def changeset(data, params \\ %{}) do
+    data
+    |> cast(params, [:catalogue_number, :title, :released, :release_id, :artist_id, :label_id, :format_id])
+    |> validate_required([:catalogue_number])
+    |> validate_required([:title])
+    |> validate_required([:release_id])
+    |> validate_number(:artist_id, greater_than: 0)
+    |> validate_number(:label_id, greater_than: 0)
+    |> validate_number(:format_id, greater_than: 0)
+    |> validate_number(:release_id, greater_than: 0)
   end
 end
