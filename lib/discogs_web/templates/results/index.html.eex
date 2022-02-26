@@ -1,10 +1,10 @@
 <table>
   <tr>
-    <th>Label</th>
-    <th>Title</th>
-    <th>Catalogue Number</th>
     <th>Artist</th>
+    <th>Title</th>
+    <th>Label</th>
     <th>Format</th>
+    <th>Catalogue Number</th>
     <th>Link</th>
   </tr>
   <%= for item <- @items do %>

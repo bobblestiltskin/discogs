@@ -1,19 +1,20 @@
 defmodule Discogs.Search do
   @moduledoc """
-  The Search context.
+  This module provides all the functions for interacting with the database using Ecto.
   """
 
   alias Discogs.Repo
   import Ecto.Query
-  alias Discogs.Search.Artist 
-  alias Discogs.Search.Format 
-  alias Discogs.Search.Item 
-  alias Discogs.Search.Label 
+
+  alias Discogs.Search.Artist
+  alias Discogs.Search.Format
+  alias Discogs.Search.Item
+  alias Discogs.Search.Label
 
   def get_artist(id) do
     Repo.get(Artist, id)
   end
- 	
+
   def get_artist_name(id) do
     Repo.get(Artist, id).artist
   end
@@ -117,9 +118,9 @@ defmodule Discogs.Search do
   end
 
   def filter_by_format(query, _format_choice, format_button) when is_bitstring(format_button) and byte_size(format_button) > 0 do
-    mike = "%#{format_button}%"
+    format_selector = "%#{format_button}%"
     subquery = from(f in Format,
-               where: like(f.format, ^mike),
+               where: like(f.format, ^format_selector),
                select: f.id)
     sqr = Repo.all(subquery)
     query |> where([i], i.format_id in ^sqr)
