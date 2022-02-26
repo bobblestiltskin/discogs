@@ -151,7 +151,7 @@ defmodule Discogs.Search do
     query
       |> join(:left, [i], a in Artist, on: i.artist_id == a.id)
       |> join(:left, [i], l in Label, on: i.label_id == l.id)
-      |> order_by([i,a,l], [a.artist, l.label]) # order by artist, label if no ordering selected
+      |> order_by([i,a,l], [a.artist, i.title, l.label]) # order by artist, title, label if no ordering selected
   end
 
   def filter_items(artist_choice, label_choice, format_choice, format_button, order_button) do
