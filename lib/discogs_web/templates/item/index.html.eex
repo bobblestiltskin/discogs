@@ -1,5 +1,12 @@
 <table>
-  <tr><th>Label</th><th>Title</th><th>Catalogue Number</th><th>Artist</th><th>Format</th><th>Link</th></tr>
+  <tr>
+    <th>Label</th>
+    <th>Title</th>
+    <th>Catalogue Number</th>
+    <th>Artist</th>
+    <th>Format</th>
+    <th>Link</th>
+  </tr>
   <%= for item <- @items do %>
     <tr>
       <%= render "item.html", item: item %>
