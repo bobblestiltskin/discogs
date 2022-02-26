@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.ArtistController do
+  @moduledoc """
+  This module provides the phoenix functions for the index and individuals' pages for the artists page.
+  """
+
   use DiscogsWeb, :controller
 
   alias Discogs.Search

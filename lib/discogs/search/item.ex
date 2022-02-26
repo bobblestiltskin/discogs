@@ -1,4 +1,8 @@
 defmodule Discogs.Search.Item do
+  @moduledoc """
+  This module provides the schema and changeset importer and validator function for the items table.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
