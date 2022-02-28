@@ -1,1 +1,2 @@
+<!-- the template for the labels option list row -->
 <option value="<%= @label.id %>"><%= @label.label %></option>

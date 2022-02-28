@@ -1,1 +1,2 @@
+<!-- the template for the format row -->
 <strong><%= @format.format %></strong>

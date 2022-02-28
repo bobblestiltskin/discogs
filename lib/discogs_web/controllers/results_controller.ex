@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.ResultsController do
+  @moduledoc """
+  This module provides the phoenix functions for the index and show pages for the find results page.
+  """
+
   use DiscogsWeb, :controller
 
   alias Discogs.Search

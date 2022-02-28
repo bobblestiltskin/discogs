@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.Router do
+  @moduledoc """
+  This module provides the definitions for the router - it maps the endpoints to the modules providing the relevant functionality.
+  """
+
   use DiscogsWeb, :router
 
   pipeline :browser do

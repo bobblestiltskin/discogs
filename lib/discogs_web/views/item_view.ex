@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.ItemView do
+  @moduledoc """
+  This module provides the view functions (db lookups and link generation) for the item page.
+  """
+
   use DiscogsWeb, :view
 
   alias Discogs.Search

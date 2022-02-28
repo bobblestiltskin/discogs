@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.ResultsView do
+  @moduledoc """
+  This module provides the view functions (db lookups and link generation) for the results page.
+  """
+
   use DiscogsWeb, :view
 
   alias Discogs.Search

@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.ArtistView do
+  @moduledoc """
+  This module provides the view functions for the links on the the artists page.
+  """
+
   use DiscogsWeb, :view
 
   def discogs_link(artist_name) do

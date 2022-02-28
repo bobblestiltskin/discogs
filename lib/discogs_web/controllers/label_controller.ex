@@ -1,4 +1,8 @@
 defmodule DiscogsWeb.LabelController do
+  @moduledoc """
+  This module provides the phoenix functions for the index and individuals' pages for the labels page.
+  """
+
   use DiscogsWeb, :controller
 
   alias Discogs.Search

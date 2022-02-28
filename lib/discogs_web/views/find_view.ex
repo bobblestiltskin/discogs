@@ -1,7 +1,9 @@
 defmodule DiscogsWeb.FindView do
-  use DiscogsWeb, :view
+  @moduledoc """
+  This module provides the link generation function for the find view page.
+  """
 
-#  alias Discogs.Search
+  use DiscogsWeb, :view
 
   def display_option(artist) do
     "<option value=\"#{Integer.to_string(artist.id)}\">#{artist.artist}</option>"

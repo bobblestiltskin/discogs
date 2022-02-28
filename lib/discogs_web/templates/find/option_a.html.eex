@@ -1,1 +1,2 @@
+<!-- the template for the artists option list row -->
 <option value="<%= @artist.id %>"><%= @artist.artist %></option>
