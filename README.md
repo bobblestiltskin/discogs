@@ -1,6 +1,6 @@
 # Discogs
 
-This is an implementation in Phoenix of a graphical front-end to a PostGresQL database which contains a subset of the data from my collection of music which is held at discogs.com.
+This is an implementation in Phoenix of a graphical front-end to a PostgreSQL database which contains a subset of the data from my collection of music which is held at discogs.com.
 
 The CSV of the data looks like ...
 ```
