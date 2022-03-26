@@ -18,10 +18,10 @@ A database needs to be created in PostgreSQL. The name of the database is config
 
 Once set, the database can be created by 
 
-'''
+```
 mix ecto.create
 mix ecto.migrate
-'''
+```
 
 
 The date can be imported to the database using
