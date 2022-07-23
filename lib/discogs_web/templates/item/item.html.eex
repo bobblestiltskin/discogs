@@ -1,7 +1,7 @@
 <!-- the template for the item row page -->
-<td><%= label_name(@item.label_id) %></td>
-<td><%= @item.title %></td>
-<td><%= @item.catalogue_number %></td>
 <td><%= artist_name(@item.artist_id) %></td>
+<td><%= @item.title %></td>
+<td><%= label_name(@item.label_id) %></td>
 <td><%= format_name(@item.format_id) %></td>
+<td><%= @item.catalogue_number %></td>
 <td><a href="<%= discogs_link(@item.title, artist_name(@item.artist_id), label_name(@item.label_id)) %>">Search</a></td>

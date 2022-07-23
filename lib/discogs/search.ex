@@ -70,7 +70,10 @@ defmodule Discogs.Search do
   end
 
   def list_items do
-    Repo.all(Item)
+    Item
+      |> join(:left, [i], a in Artist, on: i.artist_id == a.id)
+      |> order_by([i,a], [a.artist, i.title])
+      |> Repo.all()
   end
 
   def get_label(id) do
