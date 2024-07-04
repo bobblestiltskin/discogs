@@ -1,5 +1,5 @@
 <!-- the template for the find page -->
-<h1>Search Bob's Music</h1>
+<h1>Music Search</h1>
 <form action="/results">
 <table border="1">
 
