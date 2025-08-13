@@ -24,7 +24,7 @@ mix ecto.migrate
 ```
 
 
-The date can be imported to the database using
+The data can be imported to the database using
 
 ```
 mix run priv/repo/seeds.exs /path/to/csv_file
